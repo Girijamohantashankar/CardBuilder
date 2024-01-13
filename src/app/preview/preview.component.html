@@ -1,0 +1,27 @@
+<div *ngIf="visitingCardData" class="card-container">
+  <p class="company-header">
+    <u>Company Name: {{ visitingCardData.companyName }}</u>
+  </p>
+  <p class="para">
+    <i class="fa-solid fa-user"></i> Full Name: {{ visitingCardData.fullName }}
+  </p>
+  <p class="para">
+    <i class="fa-solid fa-envelope"></i>Email: {{ visitingCardData.email }}
+  </p>
+  <p class="para">
+    <i class="fa-solid fa-phone"></i>Phone Number: {{ visitingCardData.phoneNumber }}
+  </p>
+
+  <p class="para">
+    <i class="fa-solid fa-clipboard"></i>Designation:
+    {{ visitingCardData.designation }}
+  </p>
+</div>
+
+<div id="wrap">
+  <a class="btn-slide2" (click)="generatePDF()">
+    <span class="circle2"><i class="fa fa-download"></i></span>
+    <span class="title2">Download</span>
+    <span class="title-hover2">Click here</span>
+  </a>
+</div>

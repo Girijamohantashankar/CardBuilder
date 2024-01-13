@@ -1,0 +1,51 @@
+<div class="container">
+  <div class="title">Visiting Card Builder</div>
+  <form [formGroup]="visitingCardForm" (ngSubmit)="onSubmit()">
+    <div class="user__details">
+      <div class="input__box">
+        <span class="details">Full Name</span>
+        <input type="text" placeholder="E.g: Girija Mohanta" formControlName="fullName" />
+        <div *ngIf="isFieldInvalid('fullName') && visitingCardForm.get('fullName')?.touched" class="error-message">
+          {{ visitingCardForm.get('fullName')?.errors?.['maxLengthError'] || 'Full Name is required.' }}
+        </div>
+        
+      </div>
+      <div class="input__box">
+        <span class="details">Email</span>
+        <input type="email" placeholder="girija@gmail.com" formControlName="email" />
+        <div *ngIf="isFieldInvalid('email') && visitingCardForm.get('email')?.touched" class="error-message">
+          {{ visitingCardForm.get('email')?.errors?.['maxLengthError'] || 'Email is required.' }}
+        </div>
+      </div>
+      <div class="input__box">
+        <span class="details">Phone Number</span>
+        <input
+          type="tel"
+          placeholder="012-345-6789"
+          formControlName="phoneNumber"
+        />
+        <div *ngIf="isFieldInvalid('phoneNumber') && visitingCardForm.get('phoneNumber')?.touched" class="error-message">
+          Phone number is required.
+        </div>
+      </div>
+      <div class="input__box">
+        <span class="details">Company Name</span>
+        <input type="text" placeholder="E.g: Zyvika"  formControlName="companyName" />
+        <div *ngIf="isFieldInvalid('companyName') && visitingCardForm.get('companyName')?.touched" class="error-message">
+          {{ visitingCardForm.get('companyName')?.errors?.['maxLengthError'] || 'Company is required.' }}
+        </div>
+      </div>
+      <div class="input__box">
+        <span class="details">Designation</span>
+        <input type="text" placeholder="Frontend Developer" formControlName="designation" />
+        <div *ngIf="isFieldInvalid('designation') && visitingCardForm.get('designation')?.touched" class="error-message">
+          {{ visitingCardForm.get('designation')?.errors?.['maxLengthError'] || 'Designation is required.' }}
+        </div>
+      </div>
+    </div>
+
+    <div class="button">
+      <input type="submit" value="Preview" />
+    </div>
+  </form>
+</div>
